@@ -1,172 +1,426 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nobre Salgados | Lanchonete · Petrolina - PE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --yellow: #ffd600;
-            --red: #d32f2f;
-            --dark: #1a0a00;
-            --mid: #2d1500;
-            --light: #fffdf0;
-            --warm: #fff8e1;
-            --muted: #8d6e63;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Poppins', sans-serif; background: var(--light); color: var(--dark); overflow-x: hidden; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Recurso Avaliação Psicológica - Ribeiro Serviços em Saúde Mental Ltda. Psicologia e psicanálise em Jacareí - SP. Avaliação psicológica e desenvolvimento profissional.">
+  <meta name="keywords" content="psicologia, psicanálise, avaliação psicológica, saúde mental, Jacareí, São Paulo">
+  <meta name="author" content="Ribeiro Servicos em Saude Mental Ltda">
+  <meta name="geo.region" content="BR-SP">
+  <meta name="geo.placename" content="Jacareí">
+  <title>Recurso Avaliação Psicológica | Saúde Mental – Jacareí/SP</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23006064'/><text y='.9em' font-size='62' font-family='serif' font-weight='900' fill='white' x='16'>R</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --teal: #006064;
+      --teal-light: #00acc1;
+      --teal-glow: #4dd0e1;
+      --mint: #e0f7fa;
+      --sage: #b2dfdb;
+      --dark: #0a1f20;
+      --dark-mid: #0f2b2d;
+      --dark-card: #142d30;
+      --white: #f0fafb;
+      --white-dim: rgba(240,250,251,0.72);
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--dark); color: var(--white); overflow-x: hidden; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--dark-mid); }
+    ::-webkit-scrollbar-thumb { background: var(--teal-light); border-radius: 10px; }
 
-        nav {
-            position: fixed; top: 0; width: 100%; z-index: 200;
-            background: var(--dark); padding: 0.9rem 5rem;
-            display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 4px solid var(--yellow);
-        }
-        .nav-brand { font-family: 'Righteous', sans-serif; font-size: 1.5rem; color: var(--yellow); letter-spacing: 0.06em; }
-        .nav-brand span { color: white; }
-        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-        .nav-links a { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
-        .nav-links a:hover { color: var(--yellow); }
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 5vw; height: 70px;
+      background: rgba(10,31,32,0.95); backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0,172,193,0.2);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .nav-logo-badge {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--teal); border: 2px solid var(--teal-glow);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-size: 20px; color: var(--white); font-weight: 400;
+    }
+    .nav-logo-text { font-family: var(--font-display); font-size: 1.3rem; color: var(--white); }
+    .nav-logo-text span { color: var(--teal-glow); font-style: italic; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--white-dim); text-decoration: none; letter-spacing: 0.5px; transition: color 0.25s; }
+    .nav-links a:hover { color: var(--teal-glow); }
+    .nav-cta { color: var(--teal-glow) !important; border: 1.5px solid var(--teal-glow) !important; padding: 0.45rem 1.2rem; border-radius: 30px; transition: background 0.25s, color 0.25s !important; }
+    .nav-cta:hover { background: var(--teal-glow) !important; color: var(--dark) !important; }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 6px; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--white); }
 
-        .hero {
-            padding-top: 73px; min-height: 95vh;
-            background: var(--yellow);
-            display: grid; grid-template-columns: 1fr 1fr;
-            align-items: center; position: relative; overflow: hidden;
-        }
-        .hero::before { content: ''; position: absolute; inset: 0; background: repeating-radial-gradient(circle at 50% 50%, transparent 0, transparent 40px, rgba(0,0,0,0.015) 40px, rgba(0,0,0,0.015) 41px); }
-        .hero-left { padding: 5rem; position: relative; z-index: 1; }
-        .hero-kicker { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem; }
-        .hero-kicker::before { content: ''; width: 24px; height: 3px; background: var(--red); }
-        h1 { font-family: 'Righteous', sans-serif; font-size: clamp(3.5rem, 6vw, 6rem); color: var(--dark); line-height: 1.0; margin-bottom: 1.5rem; letter-spacing: 0.02em; }
-        h1 span { color: var(--red); }
-        .hero-p { font-size: 1rem; font-weight: 400; color: rgba(0,0,0,0.6); line-height: 1.8; max-width: 400px; margin-bottom: 2.5rem; }
-        .btn-row { display: flex; gap: 1rem; flex-wrap: wrap; }
-        .btn-main { background: var(--dark); color: var(--yellow); padding: 0.9rem 2.5rem; font-family: 'Righteous', sans-serif; font-size: 1rem; letter-spacing: 0.08em; text-decoration: none; transition: background 0.2s; }
-        .btn-main:hover { background: var(--red); color: white; }
-        .btn-sec { background: white; color: var(--dark); padding: 0.9rem 2.5rem; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.2s; }
-        .btn-sec:hover { background: var(--red); color: white; }
-        .hero-right { display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
-        .salgado-wrap { text-align: center; }
-        .salgado-ico { font-size: 9rem; display: block; animation: bounce-in 0.8s ease-out, pop 3s ease-in-out infinite 0.8s; }
-        @keyframes bounce-in { 0%{transform:scale(0) rotate(-20deg);} 80%{transform:scale(1.1) rotate(5deg);} 100%{transform:scale(1) rotate(0);} }
-        @keyframes pop { 0%,100%{transform:scale(1);} 50%{transform:scale(1.06);} }
-        .status-badge { display: inline-block; margin-top: 1.5rem; background: var(--dark); color: var(--yellow); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; padding: 0.5rem 1.5rem; }
+    /* HERO */
+    #hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding: 120px 5vw 80px; }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 50% 60% at 70% 50%, rgba(0,172,193,0.15) 0%, transparent 65%),
+        linear-gradient(160deg, #0a1f20 0%, #0f2b2d 60%, #0a1f20 100%);
+    }
+    .hero-circles {
+      position: absolute; right: 4%; top: 50%; transform: translateY(-50%);
+      pointer-events: none; z-index: 0;
+    }
+    .hero-circle {
+      border-radius: 50%; border: 1px solid rgba(77,208,225,0.15);
+      position: absolute; animation: breathe 4s ease-in-out infinite;
+    }
+    .hero-circle:nth-child(1) { width: 350px; height: 350px; top: -175px; left: -175px; animation-delay: 0s; }
+    .hero-circle:nth-child(2) { width: 250px; height: 250px; top: -125px; left: -125px; animation-delay: 0.5s; border-color: rgba(77,208,225,0.2); }
+    .hero-circle:nth-child(3) { width: 150px; height: 150px; top: -75px; left: -75px; animation-delay: 1s; border-color: rgba(77,208,225,0.3); background: radial-gradient(circle, rgba(0,96,100,0.2) 0%, transparent 70%); }
+    @keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+    .hero-content { position: relative; z-index: 1; max-width: 680px; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,172,193,0.1); border: 1px solid rgba(77,208,225,0.3); padding: 0.4rem 1.1rem; border-radius: 30px; font-size: 0.78rem; font-weight: 500; color: var(--teal-glow); letter-spacing: 1.5px; margin-bottom: 2rem; }
+    .hero h1 { font-family: var(--font-display); font-size: clamp(3rem, 6.5vw, 6rem); line-height: 1.05; color: var(--white); margin-bottom: 1.5rem; }
+    .hero h1 .accent { color: var(--teal-glow); font-style: italic; display: block; }
+    .hero-desc { font-size: 1.05rem; line-height: 1.8; color: var(--white-dim); max-width: 520px; margin-bottom: 2.5rem; font-weight: 300; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: white; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.5px; text-decoration: none; padding: 0.95rem 2rem; border-radius: 30px; transition: background 0.25s, transform 0.2s; border: none; cursor: pointer; box-shadow: 0 4px 20px rgba(0,96,100,0.5); }
+    .btn-primary:hover { background: var(--teal-light); transform: translateY(-2px); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 8px; border: 1.5px solid rgba(77,208,225,0.3); color: var(--white-dim); font-weight: 500; font-size: 0.9rem; text-decoration: none; padding: 0.95rem 2rem; border-radius: 30px; transition: border-color 0.25s, color 0.25s; }
+    .btn-secondary:hover { border-color: var(--teal-glow); color: var(--teal-glow); }
+    .hero-stats { margin-top: 4rem; display: flex; gap: 3.5rem; flex-wrap: wrap; }
+    .stat-num { font-family: var(--font-display); font-size: 2.8rem; color: var(--teal-glow); line-height: 1; }
+    .stat-label { font-size: 0.78rem; font-weight: 500; color: var(--white-dim); letter-spacing: 0.5px; margin-top: 4px; }
 
-        .diagonal { height: 70px; background: var(--dark); clip-path: polygon(0 0, 100% 40%, 100% 100%, 0 100%); }
+    /* SECTION */
+    section { position: relative; z-index: 1; }
+    .section-inner { max-width: 1240px; margin: 0 auto; padding: 0 5vw; }
+    .section-kicker { display: inline-flex; align-items: center; gap: 10px; font-size: 0.75rem; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal-glow); margin-bottom: 1rem; }
+    .section-kicker::before { content: ''; display: block; width: 24px; height: 2px; background: var(--teal-glow); }
+    .section-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; color: var(--white); margin-bottom: 1.2rem; }
+    .section-desc { font-size: 1rem; line-height: 1.75; color: var(--white-dim); max-width: 540px; font-weight: 300; }
 
-        .menu { padding: 5rem; background: var(--dark); }
-        .m-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--yellow); margin-bottom: 0.5rem; }
-        .m-title { font-family: 'Righteous', sans-serif; font-size: clamp(2rem, 4vw, 3rem); color: white; margin-bottom: 3rem; letter-spacing: 0.04em; }
-        .m-title span { color: var(--yellow); }
-        .m-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(255,215,0,0.1); }
-        .m-card { background: var(--mid); padding: 2.5rem 2rem; transition: background 0.3s; }
-        .m-card:hover { background: var(--red); }
-        .m-ico { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
-        .m-card h3 { font-family: 'Righteous', sans-serif; font-size: 1.1rem; color: var(--yellow); margin-bottom: 0.6rem; letter-spacing: 0.04em; transition: color 0.3s; }
-        .m-card:hover h3 { color: white; }
-        .m-card p { font-size: 0.85rem; color: rgba(255,255,255,0.45); line-height: 1.7; }
+    /* SOBRE */
+    #sobre { padding: 100px 0; background: var(--dark-mid); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .about-visual-box { background: var(--dark-card); border: 1px solid rgba(77,208,225,0.15); padding: 2.5rem; border-radius: 12px; position: relative; overflow: hidden; }
+    .about-visual-box::after { content: ''; position: absolute; top: -60px; right: -60px; width: 160px; height: 160px; border-radius: 50%; background: radial-gradient(circle, rgba(0,172,193,0.15) 0%, transparent 70%); }
+    .about-icon-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .about-icon-item { background: rgba(0,172,193,0.06); border: 1px solid rgba(77,208,225,0.12); padding: 1.2rem; border-radius: 8px; transition: border-color 0.3s; }
+    .about-icon-item:hover { border-color: rgba(77,208,225,0.35); }
+    .about-icon-item .icon { font-size: 1.8rem; margin-bottom: 0.5rem; display: block; }
+    .about-icon-item h4 { font-size: 0.85rem; font-weight: 600; color: var(--white); margin-bottom: 0.3rem; }
+    .about-icon-item p { font-size: 0.8rem; color: var(--white-dim); line-height: 1.4; font-weight: 300; }
+    .about-text p { font-size: 0.97rem; line-height: 1.85; color: var(--white-dim); margin-bottom: 1.4rem; font-weight: 300; }
+    .about-text p strong { color: var(--white); font-weight: 600; }
+    .cnpj-badge { margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 10px; background: rgba(0,172,193,0.08); border: 1px solid rgba(77,208,225,0.25); padding: 0.8rem 1.4rem; border-radius: 8px; }
+    .cnpj-badge span { font-size: 0.78rem; font-weight: 600; color: var(--white-dim); letter-spacing: 0.5px; }
+    .cnpj-badge strong { font-size: 0.92rem; color: var(--teal-glow); font-weight: 600; letter-spacing: 0.5px; }
 
-        .about { padding: 5rem; background: var(--warm); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-        .a-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); margin-bottom: 0.5rem; }
-        .a-title { font-family: 'Righteous', sans-serif; font-size: clamp(2rem,3.5vw,2.8rem); color: var(--dark); margin-bottom: 1.5rem; letter-spacing: 0.02em; }
-        .a-p { font-size: 0.92rem; color: var(--muted); line-height: 1.9; margin-bottom: 1rem; }
-        .a-badge { display: inline-block; background: var(--red); color: white; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.5rem 1.5rem; }
-        .data-box { background: var(--dark); padding: 2.5rem; border-top: 4px solid var(--yellow); }
-        .dr { display: flex; justify-content: space-between; padding: 0.7rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
-        .dr:last-child { border: none; }
-        .dk { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
-        .dv { font-size: 0.88rem; color: rgba(255,255,255,0.8); }
-        .dv.ok { color: var(--yellow); font-weight: 600; }
+    /* SERVICES */
+    #servicos { padding: 100px 0; background: var(--dark); border-top: 1px solid rgba(255,255,255,0.04); }
+    .services-header { margin-bottom: 4rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .service-card { background: var(--dark-card); border: 1px solid rgba(77,208,225,0.1); padding: 2.5rem 2rem; border-radius: 12px; transition: border-color 0.3s, transform 0.3s; position: relative; overflow: hidden; }
+    .service-card:hover { border-color: rgba(77,208,225,0.3); transform: translateY(-4px); }
+    .service-number { font-family: var(--font-display); font-size: 3.5rem; color: rgba(77,208,225,0.08); line-height: 1; margin-bottom: 1rem; }
+    .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+    .service-card h3 { font-family: var(--font-display); font-size: 1.1rem; color: var(--white); margin-bottom: 0.6rem; }
+    .service-card p { font-size: 0.88rem; color: var(--white-dim); line-height: 1.65; font-weight: 300; }
 
-        .contact { background: var(--red); padding: 4rem 5rem; text-align: center; }
-        .contact h2 { font-family: 'Righteous', sans-serif; font-size: 2.5rem; color: white; margin-bottom: 0.5rem; letter-spacing: 0.04em; }
-        .contact p { color: rgba(255,255,255,0.65); margin-bottom: 2rem; }
-        .c-pills { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-        .cpill { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 0.75rem 1.8rem; font-size: 0.88rem; font-weight: 500; }
-        footer { background: var(--dark); border-top: 4px solid var(--yellow); padding: 1.2rem 5rem; display: flex; justify-content: space-between; align-items: center; }
-        footer span { font-size: 0.72rem; color: rgba(255,255,255,0.25); }
-        footer a { font-size: 0.72rem; color: rgba(255,255,255,0.25); text-decoration: none; transition: color 0.2s; }
-        footer a:hover { color: var(--yellow); }
-        @media(max-width:900px) { .hero,.about{grid-template-columns:1fr;} .m-grid{grid-template-columns:1fr;} nav,.menu,.about,.contact,footer{padding-left:1.5rem;padding-right:1.5rem;} .hero-left{padding:6rem 1.5rem 3rem;} .hero-right{min-height:50vh;} .nav-links{display:none;} }
-    </style>
+    /* TESTIMONIALS */
+    #depoimentos { padding: 100px 0; background: var(--dark-mid); border-top: 1px solid rgba(255,255,255,0.04); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3.5rem; }
+    .testimonial-card { background: var(--dark-card); border: 1px solid rgba(77,208,225,0.1); padding: 2rem; border-radius: 12px; transition: border-color 0.3s, transform 0.3s; position: relative; }
+    .testimonial-card:hover { border-color: rgba(77,208,225,0.3); transform: translateY(-4px); }
+    .testimonial-card::before { content: '\201C'; font-family: Georgia; font-size: 4rem; color: var(--teal-glow); opacity: 0.35; position: absolute; top: 1rem; left: 1.8rem; }
+    .testimonial-text { font-size: 0.9rem; line-height: 1.75; color: var(--white-dim); margin-top: 1.5rem; margin-bottom: 1.5rem; font-style: italic; font-weight: 300; }
+    .testimonial-author { display: flex; align-items: center; gap: 0.8rem; }
+    .author-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--teal), var(--teal-light)); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1rem; color: white; }
+    .author-name { font-size: 0.88rem; font-weight: 600; color: var(--white); }
+    .author-role { font-size: 0.78rem; color: var(--white-dim); font-weight: 300; }
+    .stars { color: var(--teal-glow); font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 0.4rem; }
+
+    /* CONTACT */
+    #contato { padding: 100px 0 0; background: var(--dark); border-top: 1px solid rgba(255,255,255,0.04); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+    .contact-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.8rem; }
+    .contact-icon { width: 42px; height: 42px; border-radius: 50%; background: rgba(0,172,193,0.1); border: 1px solid rgba(77,208,225,0.2); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+    .contact-item h4 { font-size: 0.72rem; font-weight: 600; color: var(--teal-glow); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.3rem; }
+    .contact-item p, .contact-item a { font-size: 0.92rem; color: var(--white-dim); text-decoration: none; line-height: 1.6; font-weight: 300; }
+    .contact-item a:hover { color: var(--teal-glow); }
+    .contact-form-block h3 { font-family: var(--font-display); font-size: 2rem; color: var(--white); margin-bottom: 1.5rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; font-size: 0.72rem; font-weight: 600; color: var(--white-dim); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; background: var(--dark-card); border: 1px solid rgba(77,208,225,0.15); border-radius: 8px; color: var(--white); font-family: var(--font-body); font-size: 0.92rem; padding: 0.85rem 1rem; outline: none; transition: border-color 0.3s; -webkit-appearance: none; font-weight: 300; }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--teal-glow); }
+    .form-group select option { background: var(--dark-card); }
+    .form-submit { width: 100%; padding: 1rem; background: var(--teal); color: white; border: none; border-radius: 30px; font-size: 0.95rem; font-weight: 600; letter-spacing: 1px; cursor: pointer; transition: background 0.25s; margin-top: 0.5rem; box-shadow: 0 4px 20px rgba(0,96,100,0.4); }
+    .form-submit:hover { background: var(--teal-light); }
+    .form-success { display: none; background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); padding: 1rem; color: #34d399; font-size: 0.9rem; text-align: center; margin-top: 1rem; border-radius: 8px; }
+    .map-stripe { background: var(--dark-mid); border-top: 1px solid rgba(77,208,225,0.12); padding: 1.5rem 5vw; display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+    .map-stripe p { font-size: 0.85rem; color: var(--white-dim); font-weight: 300; }
+    .map-stripe strong { color: var(--white); font-weight: 600; }
+    .map-link { font-size: 0.82rem; font-weight: 600; color: var(--teal-glow); text-decoration: none; letter-spacing: 0.5px; border-bottom: 1px solid rgba(77,208,225,0.35); padding-bottom: 1px; transition: color 0.25s; }
+    .map-link:hover { color: var(--white); }
+
+    /* FOOTER */
+    footer { background: #050f10; padding: 60px 5vw 40px; border-top: 1px solid rgba(77,208,225,0.12); }
+    .footer-inner { max-width: 1240px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .footer-brand h2 { font-family: var(--font-display); font-size: 2rem; color: var(--white); margin-bottom: 0.8rem; }
+    .footer-brand h2 span { color: var(--teal-glow); font-style: italic; }
+    .footer-brand p { font-size: 0.88rem; color: var(--white-dim); line-height: 1.7; max-width: 300px; margin-bottom: 1.2rem; font-weight: 300; }
+    .footer-official { background: rgba(0,172,193,0.07); border: 1px solid rgba(77,208,225,0.15); padding: 1rem 1.2rem; border-radius: 8px; }
+    .footer-official-title { font-size: 0.68rem; font-weight: 600; color: var(--teal-glow); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 0.6rem; }
+    .footer-official p { font-size: 0.82rem; color: var(--white-dim); line-height: 1.7; font-weight: 300; }
+    .footer-official strong { color: var(--white); font-weight: 500; }
+    .footer-col h4 { font-size: 0.78rem; font-weight: 600; color: var(--teal-glow); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.2rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer-col ul a { font-size: 0.88rem; color: var(--white-dim); text-decoration: none; transition: color 0.25s; font-weight: 300; }
+    .footer-col ul a:hover { color: var(--teal-glow); }
+    .footer-bottom { padding-top: 2rem; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-legal p { font-size: 0.78rem; color: rgba(120,190,195,0.45); line-height: 1.7; font-weight: 300; }
+    .footer-legal strong { color: rgba(120,190,195,0.65); font-weight: 500; }
+    .footer-policy-links { display: flex; gap: 1.5rem; }
+    .footer-policy-links a { font-size: 0.78rem; color: rgba(120,190,195,0.45); text-decoration: none; transition: color 0.25s; }
+    .footer-policy-links a:hover { color: var(--teal-glow); }
+
+    .modal-overlay { display: none; position: fixed; inset: 0; z-index: 9000; background: rgba(0,0,0,0.88); backdrop-filter: blur(6px); overflow-y: auto; padding: 4vh 4vw; }
+    .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+    .modal-box { background: var(--dark-card); border: 1px solid rgba(77,208,225,0.18); border-radius: 12px; max-width: 820px; width: 100%; padding: 3rem; position: relative; margin: auto; }
+    .modal-close { position: absolute; top: 1.2rem; right: 1.5rem; background: none; border: none; color: var(--white-dim); font-size: 1.5rem; cursor: pointer; transition: color 0.2s; }
+    .modal-close:hover { color: var(--teal-glow); }
+    .modal-box h2 { font-family: var(--font-display); font-size: 2rem; color: var(--white); margin-bottom: 0.5rem; }
+    .modal-box .modal-updated { font-size: 0.78rem; color: var(--white-dim); margin-bottom: 2rem; font-weight: 300; }
+    .modal-box h3 { font-size: 0.9rem; font-weight: 600; color: var(--teal-glow); letter-spacing: 1px; text-transform: uppercase; margin: 1.8rem 0 0.6rem; }
+    .modal-box p, .modal-box li { font-size: 0.9rem; line-height: 1.8; color: var(--white-dim); font-weight: 300; }
+    .modal-box ul { padding-left: 1.2rem; margin-top: 0.4rem; }
+    .modal-box ul li { margin-bottom: 0.3rem; }
+    .modal-box .modal-company-data { background: rgba(0,172,193,0.08); border-left: 3px solid var(--teal-glow); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+    .modal-box .modal-company-data p { font-size: 0.88rem; }
+    hr.modal-divider { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 2.5rem 0; }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: var(--dark-card); padding: 1.5rem 5vw; border-bottom: 1px solid rgba(77,208,225,0.12); gap: 1.2rem; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .services-grid, .testimonials-grid { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 580px) { .services-grid, .testimonials-grid { grid-template-columns: 1fr; } .hero-stats { gap: 2rem; } }
+  </style>
 </head>
 <body>
-<nav>
-    <div class="nav-brand">NOBRE<span> SALGADOS</span></div>
-    <ul class="nav-links">
-        <li><a href="#home">Início</a></li>
-        <li><a href="#menu">Cardápio</a></li>
-        <li><a href="#about">Sobre</a></li>
-        <li><a href="#contact">Contato</a></li>
-    </ul>
+
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <div class="nav-logo-badge">R</div>
+    <div><div class="nav-logo-text">RECURSO <span>Psicológica</span></div></div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#depoimentos">Depoimentos</a></li>
+    <li><a href="#contato" class="nav-cta">Agendar</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-<section class="hero" id="home">
-    <div class="hero-left">
-        <div class="hero-kicker">Petrolina · Pernambuco</div>
-        <h1>SALGADOS<br><span>QUENTINHOS</span><br>TODO DIA</h1>
-        <p class="hero-p">Salgados artesanais, sucos naturais e lanches irresistíveis preparados com carinho em Petrolina - PE. Sabor que faz você voltar sempre!</p>
-        <div class="btn-row">
-            <a href="#contact" class="btn-main">Peça Agora</a>
-            <a href="#menu" class="btn-sec">Ver Cardápio</a>
+
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-circles"><div class="hero-circle"></div><div class="hero-circle"></div><div class="hero-circle"></div></div>
+  <div class="hero-content">
+    <div class="hero-tag">🧠 Jacareí · São Paulo – SP</div>
+    <h1>
+      Saúde Mental<br>
+      <span class="accent">que transforma</span><br>
+      vidas
+    </h1>
+    <p class="hero-desc">Avaliação psicológica, psicologia e psicanálise com abordagem humanizada e científica. Cuidando do seu bem-estar emocional em Jacareí, São Paulo.</p>
+    <div class="hero-actions">
+      <a href="#contato" class="btn-primary">🧠 Agendar Consulta</a>
+      <a href="#servicos" class="btn-secondary">Ver Serviços →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><div class="stat-num">SP</div><div class="stat-label">São Paulo</div></div>
+      <div class="stat-item"><div class="stat-num">2022</div><div class="stat-label">Desde</div></div>
+      <div class="stat-item"><div class="stat-num">ATIVA</div><div class="stat-label">Receita Federal</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-visual-box">
+          <div class="about-icon-grid">
+            <div class="about-icon-item"><span class="icon">🧠</span><h4>Psicologia</h4><p>Atendimento psicológico profissional e humanizado</p></div>
+            <div class="about-icon-item"><span class="icon">🛋️</span><h4>Psicanálise</h4><p>Análise profunda do inconsciente e subjetividade</p></div>
+            <div class="about-icon-item"><span class="icon">📊</span><h4>Avaliação</h4><p>Avaliação psicológica com laudos técnicos precisos</p></div>
+            <div class="about-icon-item"><span class="icon">📈</span><h4>Desenvolvimento</h4><p>Treinamento profissional e gerencial</p></div>
+          </div>
         </div>
+      </div>
+      <div class="about-text reveal">
+        <div class="section-kicker">Sobre nós</div>
+        <h2 class="section-title">Cuidado com a Saúde Mental</h2>
+        <p>A <strong>Ribeiro Servicos em Saude Mental Ltda</strong>, com nome fantasia <strong>Recurso Avaliação Psicológica</strong>, é uma empresa especializada em atividades de psicologia e psicanálise, localizada em Jacareí – SP.</p>
+        <p>Oferecemos serviços de avaliação psicológica, atendimento clínico e treinamento em desenvolvimento profissional e gerencial, com uma abordagem humanizada que respeita a singularidade de cada indivíduo.</p>
+        <p>Situação cadastral <strong>ATIVA</strong> perante a Receita Federal desde outubro de 2022, com compromisso ético e profissional com nossos pacientes e clientes.</p>
+        <div class="cnpj-badge"><span>CNPJ:</span><strong>48.315.671/0001-78</strong></div>
+      </div>
     </div>
-    <div class="hero-right">
-        <div class="salgado-wrap">
-            <span class="salgado-ico">🥟</span>
-            <div class="status-badge">✅ CNPJ Ativo</div>
-        </div>
-    </div>
+  </div>
 </section>
-<div class="diagonal"></div>
-<section class="menu" id="menu">
-    <div class="m-label">O que temos</div>
-    <h2 class="m-title">NOSSO <span>CARDÁPIO</span></h2>
-    <div class="m-grid">
-        <div class="m-card"><span class="m-ico">🥟</span><h3>Salgados Artesanais</h3><p>Coxinhas, pastéis, esfirras, quibes e muito mais fresquinhos e crocantes.</p></div>
-        <div class="m-card"><span class="m-ico">🥤</span><h3>Sucos Naturais</h3><p>Frutas da época selecionadas e transformadas em sucos frescos e vitaminados.</p></div>
-        <div class="m-card"><span class="m-ico">☕</span><h3>Café & Bebidas</h3><p>Café quentinho, achocolatado, chá e refrigerantes para acompanhar seu lanche.</p></div>
-        <div class="m-card"><span class="m-ico">🍞</span><h3>Pães & Bolos</h3><p>Pães de queijo, bolos caseiros e roscas fresquinhas saídas direto do forno.</p></div>
-        <div class="m-card"><span class="m-ico">🍔</span><h3>Lanches</h3><p>Sanduíches naturais e lanches variados para saciar a fome em qualquer hora.</p></div>
-        <div class="m-card"><span class="m-ico">🚚</span><h3>Delivery</h3><p>Entregamos quentinho na sua casa ou empresa em Petrolina e região.</p></div>
+
+<section id="servicos">
+  <div class="section-inner">
+    <div class="services-header reveal">
+      <div class="section-kicker">O que oferecemos</div>
+      <h2 class="section-title">Nossos Serviços</h2>
+      <p class="section-desc">Soluções completas em saúde mental para indivíduos e organizações.</p>
     </div>
+    <div class="services-grid">
+      <div class="service-card reveal"><div class="service-number">01</div><span class="service-icon">📋</span><h3>Avaliação Psicológica</h3><p>Avaliação psicológica completa com aplicação de testes, entrevistas e laudos técnicos especializados.</p></div>
+      <div class="service-card reveal"><div class="service-number">02</div><span class="service-icon">🧠</span><h3>Psicoterapia</h3><p>Atendimento psicoterápico individual com abordagens humanizadas para o tratamento de transtornos e sofrimento emocional.</p></div>
+      <div class="service-card reveal"><div class="service-number">03</div><span class="service-icon">🛋️</span><h3>Psicanálise</h3><p>Processo analítico aprofundado para investigação do inconsciente e promoção de autoconhecimento e autonomia.</p></div>
+      <div class="service-card reveal"><div class="service-number">04</div><span class="service-icon">📈</span><h3>Desenvolvimento Profissional</h3><p>Treinamentos e consultorias para desenvolvimento profissional e gerencial em empresas e organizações.</p></div>
+      <div class="service-card reveal"><div class="service-number">05</div><span class="service-icon">👥</span><h3>Psicologia Organizacional</h3><p>Suporte psicológico para ambientes de trabalho, gestão de talentos e promoção de saúde nas organizações.</p></div>
+      <div class="service-card reveal"><div class="service-number">06</div><span class="service-icon">📝</span><h3>Laudos e Perícias</h3><p>Elaboração de laudos psicológicos técnicos para fins jurídicos, trabalhistas e de saúde ocupacional.</p></div>
+    </div>
+  </div>
 </section>
-<section class="about" id="about">
-    <div>
-        <div class="a-label">Nossa história</div>
-        <h2 class="a-title">NOBRE SALGADOS EM PETROLINA</h2>
-        <p class="a-p">Fundada em agosto de 2024, a Nobre Salgados e Lachonetes Ltda chegou à Zona Rural de Petrolina — PE com a missão de levar salgados artesanais de qualidade, sucos naturais e lanches variados para toda a comunidade.</p>
-        <p class="a-p">Com endereço na Rua 18 VI Nova 300, Núcleo 7/Massangano, somos uma lanchonete de bairro com coração grande e muito sabor em cada pedido.</p>
-        <p class="a-p">CNPJ ativo e operações regulares garantem transparência e confiança.</p>
-        <span class="a-badge">✅ CNPJ Ativo · ME · Petrolina/PE</span>
+
+<section id="depoimentos">
+  <div class="section-inner">
+    <div class="reveal"><div class="section-kicker">Pacientes</div><h2 class="section-title">O que dizem sobre nós</h2></div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal"><div class="stars">★★★★★</div><p class="testimonial-text">A avaliação psicológica foi conduzida com muito profissionalismo e cuidado. O laudo foi detalhado e me ajudou muito no processo que precisava. Recomendo com confiança.</p><div class="testimonial-author"><div class="author-avatar">F</div><div><div class="author-name">Fernanda M.</div><div class="author-role">Paciente – Jacareí, SP</div></div></div></div>
+      <div class="testimonial-card reveal"><div class="stars">★★★★★</div><p class="testimonial-text">O acompanhamento psicoterapêutico foi transformador para minha vida. A escuta humanizada e o compromisso ético fizeram toda a diferença no meu processo de autoconhecimento.</p><div class="testimonial-author"><div class="author-avatar">G</div><div><div class="author-name">Gabriel S.</div><div class="author-role">Paciente – São José dos Campos, SP</div></div></div></div>
+      <div class="testimonial-card reveal"><div class="stars">★★★★★</div><p class="testimonial-text">Contratamos o treinamento gerencial para nossa equipe e os resultados foram excelentes. Abordagem prática, conteúdo de qualidade e dinâmicas muito enriquecedoras. Parabéns!</p><div class="testimonial-author"><div class="author-avatar">C</div><div><div class="author-name">Carla R.</div><div class="author-role">Gestora de RH – SP</div></div></div></div>
     </div>
-    <div class="data-box">
-        <div class="dr"><span class="dk">Razão Social</span><span class="dv">Nobre Salgados e Lachonetes Ltda</span></div>
-        <div class="dr"><span class="dk">CNPJ</span><span class="dv">56.339.628/0001-70</span></div>
-        <div class="dr"><span class="dk">Abertura</span><span class="dv">07/08/2024</span></div>
-        <div class="dr"><span class="dk">Situação</span><span class="dv ok">✅ Ativa</span></div>
-        <div class="dr"><span class="dk">Endereço</span><span class="dv">R 18 VI Nova 300, Nuc.7, Nº 300</span></div>
-        <div class="dr"><span class="dk">Bairro</span><span class="dv">Zona Rural</span></div>
-        <div class="dr"><span class="dk">Cidade</span><span class="dv">Petrolina — PE</span></div>
-        <div class="dr"><span class="dk">CEP</span><span class="dv">56.300-992</span></div>
-        <div class="dr"><span class="dk">Telefone</span><span class="dv">(81) 9788-2780</span></div>
-    </div>
+  </div>
 </section>
-<section class="contact" id="contact">
-    <h2>FALE CONOSCO</h2>
-    <p>Pedidos e informações</p>
-    <div class="c-pills">
-        <div class="cpill">📞 (81) 9788-2780</div>
-        <div class="cpill">✉️ compromissocontabil@hotmail.com</div>
-        <div class="cpill">📍 Zona Rural, Petrolina/PE</div>
+
+<section id="contato">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-info-block reveal">
+        <div class="section-kicker">Fale conosco</div>
+        <h2 class="section-title">Agende sua Consulta</h2>
+        <p class="section-desc" style="margin-bottom:2.5rem">Entre em contato e dê o primeiro passo para cuidar da sua saúde mental com profissionalismo e acolhimento.</p>
+        <div class="contact-item"><div class="contact-icon">📍</div><div><h4>Endereço</h4><p>R Antonio Afonso, 205<br>Sala 35 Andar 3 – Centro<br>JACAREÍ – SP<br>CEP: 12.327-270</p></div></div>
+        <div class="contact-item"><div class="contact-icon">📞</div><div><h4>Telefone</h4><a href="tel:+551281763342">(12) 8176-3342</a></div></div>
+        <div class="contact-item"><div class="contact-icon">✉️</div><div><h4>E-mail</h4><a href="mailto:elaineribeiro.mkt@gmail.com">elaineribeiro.mkt@gmail.com</a></div></div>
+        <div class="contact-item"><div class="contact-icon">🕐</div><div><h4>Horário de Atendimento</h4><p>Segunda a Sexta: 08h – 19h<br>Sábado: 08h – 13h</p></div></div>
+      </div>
+      <div class="contact-form-block reveal">
+        <h3>Envie uma Mensagem</h3>
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group"><label>Nome *</label><input type="text" placeholder="Seu nome" required></div>
+            <div class="form-group"><label>Telefone *</label><input type="tel" placeholder="(12) 00000-0000" required></div>
+          </div>
+          <div class="form-group"><label>E-mail</label><input type="email" placeholder="seu@email.com"></div>
+          <div class="form-group"><label>Tipo de Serviço</label>
+            <select>
+              <option value="">Selecione o serviço...</option>
+              <option>Avaliação Psicológica</option>
+              <option>Psicoterapia</option>
+              <option>Psicanálise</option>
+              <option>Desenvolvimento Profissional</option>
+              <option>Psicologia Organizacional</option>
+              <option>Laudos e Perícias</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Mensagem *</label><textarea rows="5" placeholder="Descreva brevemente o que você busca..." required></textarea></div>
+          <button type="submit" class="form-submit">🧠 AGENDAR CONSULTA</button>
+          <div class="form-success" id="formSuccess">✓ Mensagem enviada! Retornaremos em breve.</div>
+        </form>
+      </div>
     </div>
+  </div>
+  <div class="map-stripe">
+    <p>📍 <strong>R Antonio Afonso, 205, Sala 35 Andar 3 – Centro – JACAREÍ/SP – CEP 12.327-270</strong></p>
+    <a href="https://maps.google.com/?q=R+Antonio+Afonso+205+Centro+Jacareí+SP" target="_blank" class="map-link">Ver no Maps →</a>
+  </div>
 </section>
+
 <footer>
-    <span>CNPJ: 56.339.628/0001-70 · Nobre Salgados e Lachonetes Ltda</span>
-    <span>© 2026 Todos os direitos reservados · <a href="privacidade.html">Política de Privacidade</a></span>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h2>RECURSO <span>Psicológica</span></h2>
+        <p>Psicologia, psicanálise e avaliação psicológica em Jacareí – SP. Cuidando da saúde mental com ética, ciência e humanidade.</p>
+        <div class="footer-official">
+          <div class="footer-official-title">Dados Oficiais da Empresa</div>
+          <p><strong>RIBEIRO SERVICOS EM SAUDE MENTAL LTDA</strong><br>CNPJ: <strong>48.315.671/0001-78</strong><br>R Antonio Afonso, 205, Sala 35 Andar 3 – Centro<br>JACAREÍ – SP – CEP: 12.327-270<br>Tel: (12) 8176-3342<br>E-mail: ELAINERIBEIRO.MKT@GMAIL.COM</p>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Serviços</h4><ul><li><a href="#servicos">Avaliação Psicológica</a></li><li><a href="#servicos">Psicoterapia</a></li><li><a href="#servicos">Psicanálise</a></li><li><a href="#servicos">Desenvolvimento Profissional</a></li><li><a href="#servicos">Laudos e Perícias</a></li></ul></div>
+      <div class="footer-col"><h4>Institucional</h4><ul><li><a href="#sobre">Sobre Nós</a></li><li><a href="#depoimentos">Depoimentos</a></li><li><a href="#contato">Agendamento</a></li><li><a href="#" onclick="openModal('privacy')">Privacidade</a></li><li><a href="#" onclick="openModal('terms')">Termos</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal"><p>© 2026 <strong>RIBEIRO SERVICOS EM SAUDE MENTAL LTDA</strong> - Todos os direitos reservados.</p><p>CNPJ: <strong>48.315.671/0001-78</strong> · R Antonio Afonso, 205, Centro, JACAREÍ – SP, CEP: 12.327-270</p></div>
+      <div class="footer-policy-links"><a href="#" onclick="openModal('privacy')">Privacidade</a><a href="#" onclick="openModal('terms')">Termos</a></div>
+    </div>
+  </div>
 </footer>
+
+<div class="modal-overlay" id="modal-privacy">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('privacy')">✕</button>
+    <h2>POLÍTICA DE PRIVACIDADE</h2>
+    <p class="modal-updated">Última atualização: abril de 2026</p>
+    <div class="modal-company-data"><p><strong>RIBEIRO SERVICOS EM SAUDE MENTAL LTDA</strong> | CNPJ: 48.315.671/0001-78<br>R Antonio Afonso, 205, Sala 35 Andar 3 – Centro – JACAREÍ – SP – CEP: 12.327-270<br>E-mail: ELAINERIBEIRO.MKT@GMAIL.COM | Tel: (12) 8176-3342</p></div>
+    <h3>1. Quem somos</h3><p>A Ribeiro Servicos em Saude Mental Ltda, inscrita no CNPJ sob o nº 48.315.671/0001-78, com sede na R Antonio Afonso, 205, Sala 35 Andar 3, Centro, Jacareí – SP, é responsável pelo tratamento dos dados pessoais coletados neste site.</p>
+    <h3>2. Dados que coletamos</h3><p>Ao utilizar nosso formulário de contato, podemos coletar:</p><ul><li>Nome completo</li><li>Número de telefone</li><li>Endereço de e-mail</li><li>Informações sobre o serviço de interesse</li></ul>
+    <h3>3. Finalidade do tratamento</h3><p>Os dados coletados são utilizados exclusivamente para: responder às solicitações de agendamento, estabelecer contato e enviar informações sobre nossos serviços quando autorizado pelo titular.</p>
+    <h3>4. Sigilo profissional</h3><p>Todos os dados referentes ao atendimento clínico são protegidos pelo sigilo profissional do psicólogo, conforme o Código de Ética Profissional do Psicólogo (CFP).</p>
+    <h3>5. Compartilhamento de dados</h3><p>Não compartilhamos, vendemos ou cedemos seus dados pessoais a terceiros, exceto quando exigido por lei ou ordem judicial.</p>
+    <h3>6. Seus direitos (LGPD)</h3><p>Conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), você pode solicitar: acesso, correção, exclusão ou portabilidade dos seus dados, entrando em contato pelo e-mail ELAINERIBEIRO.MKT@GMAIL.COM.</p>
+    <hr class="modal-divider"><p style="font-size:0.8rem;color:var(--white-dim)">© 2026 RIBEIRO SERVICOS EM SAUDE MENTAL LTDA – CNPJ 48.315.671/0001-78</p>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-terms">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('terms')">✕</button>
+    <h2>TERMOS DE USO</h2>
+    <p class="modal-updated">Última atualização: abril de 2026</p>
+    <div class="modal-company-data"><p><strong>RIBEIRO SERVICOS EM SAUDE MENTAL LTDA</strong> | CNPJ: 48.315.671/0001-78<br>R Antonio Afonso, 205, Sala 35 Andar 3 – Centro – JACAREÍ – SP – CEP: 12.327-270</p></div>
+    <h3>1. Aceitação dos termos</h3><p>Ao acessar e utilizar este site, você concorda com os presentes Termos de Uso.</p>
+    <h3>2. Sobre a empresa</h3><p>Este site pertence à Ribeiro Servicos em Saude Mental Ltda, empresa regularmente constituída, com CNPJ 48.315.671/0001-78, situação cadastral ATIVA perante a Receita Federal, atuante em atividades de psicologia, psicanálise e desenvolvimento profissional.</p>
+    <h3>3. Uso do site</h3><p>Este site tem finalidade exclusivamente informativa. As informações disponibilizadas não substituem atendimento profissional presencial.</p>
+    <h3>4. Agendamentos</h3><p>Os agendamentos realizados pelo formulário estão sujeitos à confirmação e disponibilidade. O início do atendimento ocorre após confirmação formal.</p>
+    <h3>5. Sigilo e ética</h3><p>Todos os atendimentos seguem rigorosamente o Código de Ética Profissional do Psicólogo (CFP) e a Lei Geral de Proteção de Dados.</p>
+    <h3>6. Foro</h3><p>Fica eleito o foro da Comarca de Jacareí – SP para dirimir quaisquer controvérsias.</p>
+    <hr class="modal-divider"><p style="font-size:0.8rem;color:var(--white-dim)">© 2026 RIBEIRO SERVICOS EM SAUDE MENTAL LTDA – CNPJ 48.315.671/0001-78</p>
+  </div>
+</div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+  window.addEventListener('scroll', () => { document.getElementById('navbar').style.background = window.scrollY > 50 ? 'rgba(5,15,16,0.98)' : 'rgba(10,31,32,0.95)'; });
+  const observer = new IntersectionObserver((entries) => { entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 80); observer.unobserve(e.target); } }); }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  function handleSubmit(e) { e.preventDefault(); const btn = e.target.querySelector('.form-submit'); btn.textContent = 'Enviando...'; btn.disabled = true; setTimeout(() => { document.getElementById('formSuccess').style.display = 'block'; btn.textContent = '🧠 AGENDAR CONSULTA'; btn.disabled = false; e.target.reset(); setTimeout(() => document.getElementById('formSuccess').style.display = 'none', 5000); }, 1200); }
+  function openModal(id) { event.preventDefault(); document.getElementById('modal-' + id).classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeModal(id) { document.getElementById('modal-' + id).classList.remove('open'); document.body.style.overflow = ''; }
+  document.querySelectorAll('.modal-overlay').forEach(m => { m.addEventListener('click', e => { if (e.target === m) { m.classList.remove('open'); document.body.style.overflow = ''; } }); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { document.querySelectorAll('.modal-overlay.open').forEach(m => { m.classList.remove('open'); document.body.style.overflow = ''; }); } });
+</script>
 </body>
 </html>
