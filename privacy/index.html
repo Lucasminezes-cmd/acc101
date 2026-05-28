@@ -3,414 +3,899 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Política de Privacidade | Nobre Salgados</title>
+    <meta
+      name="description"
+      content="Política de Privacidade – Recurso Avaliação Psicológica | Ribeiro Serviços em Saúde Mental Ltda. Saiba como tratamos seus dados pessoais conforme a LGPD."
+    />
+    <meta name="robots" content="noindex, follow" />
+    <title>Política de Privacidade | Recurso Avaliação Psicológica</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Righteous&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23006064'/><text y='.9em' font-size='62' font-family='serif' font-weight='900' fill='white' x='16'>R</text></svg>"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <style>
-      :root {
-        --yellow: #ffd600;
-        --red: #d32f2f;
-        --dark: #1a0a00;
-        --mid: #2d1500;
-        --light: #fffdf0;
-        --warm: #fff8e1;
-        --muted: #8d6e63;
-      }
-      * {
+      *,
+      *::before,
+      *::after {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+      }
+      :root {
+        --teal: #006064;
+        --teal-light: #00acc1;
+        --teal-glow: #4dd0e1;
+        --mint: #e0f7fa;
+        --sage: #b2dfdb;
+        --dark: #0a1f20;
+        --dark-mid: #0f2b2d;
+        --dark-card: #142d30;
+        --white: #f0fafb;
+        --white-dim: rgba(240, 250, 251, 0.72);
+        --font-display: "DM Serif Display", Georgia, serif;
+        --font-body: "DM Sans", sans-serif;
       }
       html {
         scroll-behavior: smooth;
       }
       body {
-        font-family: "Poppins", sans-serif;
-        background: var(--light);
-        color: var(--dark);
+        font-family: var(--font-body);
+        background: var(--dark);
+        color: var(--white);
         overflow-x: hidden;
       }
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--dark-mid);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--teal-light);
+        border-radius: 10px;
+      }
 
+      /* NAV */
       nav {
         position: fixed;
         top: 0;
-        width: 100%;
-        z-index: 200;
-        background: var(--dark);
-        padding: 0.9rem 5rem;
+        left: 0;
+        right: 0;
+        z-index: 1000;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 4px solid var(--yellow);
+        padding: 0 5vw;
+        height: 70px;
+        background: rgba(10, 31, 32, 0.95);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(0, 172, 193, 0.2);
       }
-      .nav-brand {
-        font-family: "Righteous", sans-serif;
-        font-size: 1.5rem;
-        color: var(--yellow);
-        letter-spacing: 0.06em;
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 14px;
         text-decoration: none;
       }
-      .nav-brand span {
-        color: white;
+      .nav-logo-badge {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--teal);
+        border: 2px solid var(--teal-glow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-display);
+        font-size: 20px;
+        color: var(--white);
+      }
+      .nav-logo-text {
+        font-family: var(--font-display);
+        font-size: 1.3rem;
+        color: var(--white);
+      }
+      .nav-logo-text span {
+        color: var(--teal-glow);
+        font-style: italic;
       }
       .nav-back {
-        font-size: 0.78rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--white-dim);
+        text-decoration: none;
+        letter-spacing: 0.5px;
+        transition: color 0.25s;
+        border: 1.5px solid rgba(77, 208, 225, 0.3);
+        padding: 0.4rem 1.1rem;
+        border-radius: 30px;
+      }
+      .nav-back:hover {
+        color: var(--teal-glow);
+        border-color: var(--teal-glow);
+      }
+
+      /* PAGE HEADER */
+      .page-header {
+        padding: 130px 5vw 70px;
+        background:
+          radial-gradient(
+            ellipse 60% 50% at 80% 50%,
+            rgba(0, 172, 193, 0.1) 0%,
+            transparent 65%
+          ),
+          linear-gradient(160deg, #0a1f20 0%, #0f2b2d 60%, #0a1f20 100%);
+        border-bottom: 1px solid rgba(77, 208, 225, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+      .page-header::before {
+        content: "";
+        position: absolute;
+        right: -80px;
+        top: -80px;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        border: 1px solid rgba(77, 208, 225, 0.08);
+        pointer-events: none;
+      }
+      .page-header::after {
+        content: "";
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        border: 1px solid rgba(77, 208, 225, 0.12);
+        pointer-events: none;
+      }
+      .page-header-inner {
+        max-width: 820px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+      .breadcrumb {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--white-dim);
+        margin-bottom: 1.5rem;
+        letter-spacing: 0.5px;
+      }
+      .breadcrumb a {
+        color: var(--teal-glow);
+        text-decoration: none;
+      }
+      .breadcrumb a:hover {
+        text-decoration: underline;
+      }
+      .breadcrumb-sep {
+        opacity: 0.4;
+      }
+      .page-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(0, 172, 193, 0.1);
+        border: 1px solid rgba(77, 208, 225, 0.3);
+        padding: 0.4rem 1.1rem;
+        border-radius: 30px;
+        font-size: 0.75rem;
         font-weight: 600;
-        letter-spacing: 0.1em;
+        color: var(--teal-glow);
+        letter-spacing: 2px;
         text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.55);
+        margin-bottom: 1.5rem;
+        display: block;
+        width: fit-content;
+      }
+      .page-header h1 {
+        font-family: var(--font-display);
+        font-size: clamp(2.2rem, 5vw, 3.5rem);
+        line-height: 1.1;
+        color: var(--white);
+        margin-bottom: 1rem;
+      }
+      .page-header h1 em {
+        color: var(--teal-glow);
+        font-style: italic;
+      }
+      .page-updated {
+        font-size: 0.82rem;
+        color: var(--white-dim);
+        font-weight: 300;
+        margin-top: 1.2rem;
+      }
+      .company-block {
+        margin-top: 1.8rem;
+        background: rgba(0, 172, 193, 0.08);
+        border-left: 3px solid var(--teal-glow);
+        padding: 1rem 1.4rem;
+        border-radius: 0 8px 8px 0;
+      }
+      .company-block p {
+        font-size: 0.88rem;
+        line-height: 1.7;
+        color: var(--white-dim);
+        font-weight: 300;
+      }
+      .company-block strong {
+        color: var(--white);
+        font-weight: 600;
+      }
+
+      /* CONTENT */
+      .policy-content {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 60px 5vw 80px;
+      }
+      .policy-section {
+        margin-bottom: 3rem;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .policy-section:last-of-type {
+        border-bottom: none;
+      }
+      .policy-section-num {
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: var(--teal-glow);
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+      .policy-section h2 {
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+        color: var(--white);
+        margin-bottom: 1.2rem;
+        line-height: 1.2;
+      }
+      .policy-section p {
+        font-size: 0.93rem;
+        line-height: 1.85;
+        color: var(--white-dim);
+        font-weight: 300;
+        margin-bottom: 1rem;
+      }
+      .policy-section p:last-child {
+        margin-bottom: 0;
+      }
+      .policy-section ul,
+      .policy-section ol {
+        padding-left: 1.4rem;
+        margin: 0.6rem 0 1rem;
+      }
+      .policy-section li {
+        font-size: 0.93rem;
+        line-height: 1.8;
+        color: var(--white-dim);
+        font-weight: 300;
+        margin-bottom: 0.4rem;
+      }
+      .policy-section li strong {
+        color: var(--white);
+        font-weight: 600;
+      }
+      .policy-section p strong {
+        color: var(--white);
+        font-weight: 600;
+      }
+      .highlight-box {
+        background: rgba(0, 172, 193, 0.07);
+        border: 1px solid rgba(77, 208, 225, 0.15);
+        border-radius: 8px;
+        padding: 1.2rem 1.4rem;
+        margin: 1.2rem 0;
+      }
+      .highlight-box p {
+        margin-bottom: 0;
+      }
+      .rights-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin: 1.2rem 0;
+      }
+      .right-item {
+        background: var(--dark-card);
+        border: 1px solid rgba(77, 208, 225, 0.1);
+        padding: 1.2rem;
+        border-radius: 8px;
+        transition: border-color 0.3s;
+      }
+      .right-item:hover {
+        border-color: rgba(77, 208, 225, 0.3);
+      }
+      .right-item .right-icon {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+      .right-item h4 {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--white);
+        margin-bottom: 0.3rem;
+      }
+      .right-item p {
+        font-size: 0.8rem;
+        line-height: 1.5;
+        color: var(--white-dim);
+        margin-bottom: 0;
+      }
+      .contact-policy-box {
+        background: var(--dark-card);
+        border: 1px solid rgba(77, 208, 225, 0.18);
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 1.5rem 0;
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+      .contact-policy-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .contact-policy-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: rgba(0, 172, 193, 0.1);
+        border: 1px solid rgba(77, 208, 225, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        flex-shrink: 0;
+      }
+      .contact-policy-item h4 {
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: var(--teal-glow);
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 0.25rem;
+      }
+      .contact-policy-item a,
+      .contact-policy-item p {
+        font-size: 0.88rem;
+        color: var(--white-dim);
+        text-decoration: none;
+        font-weight: 300;
+      }
+      .contact-policy-item a:hover {
+        color: var(--teal-glow);
+      }
+      .toc {
+        background: var(--dark-card);
+        border: 1px solid rgba(77, 208, 225, 0.12);
+        border-radius: 12px;
+        padding: 1.8rem 2rem;
+        margin-bottom: 3rem;
+      }
+      .toc h3 {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--teal-glow);
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        margin-bottom: 1.2rem;
+      }
+      .toc ol {
+        padding-left: 1.4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .toc li {
+        font-size: 0.88rem;
+        font-weight: 300;
+      }
+      .toc a {
+        color: var(--white-dim);
         text-decoration: none;
         transition: color 0.2s;
       }
-      .nav-back:hover {
-        color: var(--yellow);
+      .toc a:hover {
+        color: var(--teal-glow);
       }
 
-      .page-header {
-        padding-top: 73px;
-        background: var(--dark);
-        padding-bottom: 3rem;
-        border-bottom: 4px solid var(--yellow);
-      }
-      .page-header-inner {
-        padding: 3rem 5rem 0;
-      }
-      .ph-label {
-        font-size: 0.68rem;
-        font-weight: 700;
-        letter-spacing: 0.3em;
-        text-transform: uppercase;
-        color: var(--yellow);
-        margin-bottom: 0.5rem;
-      }
-      .ph-title {
-        font-family: "Righteous", sans-serif;
-        font-size: clamp(2rem, 4vw, 3rem);
-        color: white;
-        letter-spacing: 0.04em;
-      }
-      .ph-title span {
-        color: var(--yellow);
-      }
-      .ph-meta {
-        font-size: 0.8rem;
-        color: rgba(255, 255, 255, 0.35);
-        margin-top: 0.8rem;
-      }
-
-      .content {
-        max-width: 860px;
-        margin: 0 auto;
-        padding: 4rem 2rem;
-      }
-
-      .section {
-        margin-bottom: 2.5rem;
-      }
-
-      .section h2 {
-        font-family: "Righteous", sans-serif;
-        font-size: 1.1rem;
-        color: var(--dark);
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        border-left: 4px solid var(--yellow);
-        padding-left: 1rem;
-        margin-bottom: 1rem;
-      }
-
-      .section p {
-        font-size: 0.92rem;
-        color: var(--muted);
-        line-height: 1.9;
-        margin-bottom: 0.8rem;
-      }
-
-      .section ul {
-        list-style: none;
-        padding: 0;
-        margin-bottom: 0.8rem;
-      }
-
-      .section ul li {
-        font-size: 0.92rem;
-        color: var(--muted);
-        line-height: 1.8;
-        padding-left: 1.2rem;
-        position: relative;
-      }
-
-      .section ul li::before {
-        content: "—";
-        position: absolute;
-        left: 0;
-        color: var(--yellow);
-        font-weight: 700;
-      }
-
-      .highlight-box {
-        background: var(--dark);
-        border-top: 4px solid var(--yellow);
-        padding: 1.5rem 2rem;
-        margin: 1rem 0;
-      }
-
-      .highlight-box p {
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 0.88rem;
-        margin: 0;
-      }
-
-      .highlight-box strong {
-        color: var(--yellow);
-      }
-
-      .contact-block {
-        background: var(--warm);
-        border-left: 4px solid var(--red);
-        padding: 1.5rem 2rem;
-        margin-top: 1rem;
-      }
-
-      .contact-block p {
-        font-size: 0.88rem;
-        color: var(--dark);
-        margin-bottom: 0.4rem;
-      }
-
-      .contact-block strong {
-        color: var(--red);
-      }
-
-      .divider {
-        height: 2px;
-        background: linear-gradient(to right, var(--yellow), transparent);
-        margin: 2rem 0;
-      }
-
+      /* FOOTER */
       footer {
-        background: var(--dark);
-        border-top: 4px solid var(--yellow);
-        padding: 1.2rem 5rem;
+        background: #050f10;
+        padding: 50px 5vw 35px;
+        border-top: 1px solid rgba(77, 208, 225, 0.12);
+      }
+      .footer-inner {
+        max-width: 820px;
+        margin: 0 auto;
+      }
+      .footer-bottom {
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 1.5rem;
       }
-      footer span {
-        font-size: 0.72rem;
-        color: rgba(255, 255, 255, 0.25);
+      .footer-legal p {
+        font-size: 0.78rem;
+        color: rgba(120, 190, 195, 0.45);
+        line-height: 1.7;
+        font-weight: 300;
       }
-      footer a {
-        font-size: 0.72rem;
-        color: rgba(255, 255, 255, 0.25);
+      .footer-legal strong {
+        color: rgba(120, 190, 195, 0.65);
+        font-weight: 500;
+      }
+      .footer-policy-links {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+      }
+      .footer-policy-links a {
+        font-size: 0.78rem;
+        color: rgba(120, 190, 195, 0.45);
         text-decoration: none;
+        transition: color 0.25s;
       }
-      footer a:hover {
-        color: var(--yellow);
+      .footer-policy-links a:hover {
+        color: var(--teal-glow);
       }
 
-      @media (max-width: 900px) {
-        nav,
-        footer {
-          padding-left: 1.5rem;
-          padding-right: 1.5rem;
+      @media (max-width: 640px) {
+        .rights-grid {
+          grid-template-columns: 1fr;
         }
-        .page-header-inner {
-          padding: 2rem 1.5rem 0;
+        .contact-policy-box {
+          flex-direction: column;
+          gap: 1.2rem;
         }
-        .content {
-          padding: 2.5rem 1.5rem;
+        .footer-bottom {
+          flex-direction: column;
         }
       }
     </style>
   </head>
   <body>
-    <nav>
-      <a href="index.html" class="nav-brand">NOBRE<span> SALGADOS</span></a>
-      <a href="/" class="nav-back">← Voltar ao site</a>
-    </nav>
-
-    <header class="page-header">
+    <div class="page-header">
       <div class="page-header-inner">
-        <div class="ph-label">Documentos legais</div>
-        <h1 class="ph-title">POLÍTICA DE <span>PRIVACIDADE</span></h1>
-        <p class="ph-meta">
-          Última atualização: abril de 2026 · Nobre Salgados e Lachonetes Ltda
+        <div class="breadcrumb">
+          <a href="../index.html">Início</a>
+          <span class="breadcrumb-sep">›</span>
+          <span>Política de Privacidade</span>
+        </div>
+        <div class="page-tag">🔒 Proteção de Dados · LGPD</div>
+        <h1>Política de <em>Privacidade</em></h1>
+        <p class="page-updated">Última atualização: abril de 2026</p>
+        <div class="company-block">
+          <p>
+            <strong>RIBEIRO SERVICOS EM SAUDE MENTAL LTDA</strong><br />
+            CNPJ: 48.315.671/0001-78 · R Antonio Afonso, 205, Sala 35 Andar 3 –
+            Centro – Jacareí – SP – CEP: 12.327-270<br />
+            E-mail: ELAINERIBEIRO.MKT@GMAIL.COM · Tel: (12) 8176-3342
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <main class="policy-content">
+      <div class="policy-section" id="s1">
+        <div class="policy-section-num">Seção 01</div>
+        <h2>Quem somos — o controlador de dados</h2>
+        <p>
+          A <strong>Ribeiro Servicos em Saude Mental Ltda</strong>, pessoa
+          jurídica de direito privado, inscrita no CNPJ sob o nº
+          <strong>48.315.671/0001-78</strong>, com sede na R Antonio Afonso,
+          205, Sala 35 Andar 3, Centro, Jacareí – SP, CEP 12.327-270, e nome
+          fantasia <strong>Recurso Avaliação Psicológica</strong>, é a
+          controladora dos dados pessoais coletados por meio deste site e das
+          interações com nossos serviços.
+        </p>
+        <p>
+          Esta Política de Privacidade foi elaborada em conformidade com a
+          <strong
+            >Lei Geral de Proteção de Dados Pessoais (LGPD – Lei nº
+            13.709/2018)</strong
+          >
+          e descreve como coletamos, usamos, armazenamos e protegemos suas
+          informações pessoais.
         </p>
       </div>
-    </header>
 
-    <main class="content">
-      <div class="section">
+      <div class="policy-section" id="s2">
+        <div class="policy-section-num">Seção 02</div>
+        <h2>Quais dados coletamos e como</h2>
+        <p>Coletamos dados pessoais das seguintes formas:</p>
+        <p><strong>Formulário de contato e agendamento</strong></p>
+        <ul>
+          <li>Nome completo</li>
+          <li>Número de telefone</li>
+          <li>Endereço de e-mail</li>
+          <li>Tipo de serviço de interesse</li>
+          <li>Mensagem ou descrição da demanda</li>
+        </ul>
+        <p><strong>Navegação no site</strong></p>
+        <ul>
+          <li>
+            Dados de acesso gerados automaticamente (endereço IP, tipo de
+            navegador, páginas visitadas, data e hora de acesso)
+          </li>
+          <li>
+            Esses dados são coletados apenas para fins de segurança e análise de
+            desempenho técnico do site
+          </li>
+        </ul>
+        <p><strong>Dados clínicos e de atendimento</strong></p>
         <p>
-          A <strong>Nobre Salgados e Lachonetes Ltda</strong> (CNPJ
-          56.339.628/0001-70), com sede na Rua 18 VI Nova 300, Núcleo
-          7/Massangano, Zona Rural — Petrolina/PE, respeita sua privacidade e
-          está comprometida com a proteção dos seus dados pessoais, em
-          conformidade com a
+          Informações relacionadas ao processo terapêutico ou de avaliação
+          psicológica são coletadas exclusivamente no contexto do atendimento
+          presencial ou remoto formalizado, e são tratadas com o mais estrito
+          sigilo profissional, conforme a <strong>Seção 04</strong> desta
+          política.
+        </p>
+      </div>
+
+      <div class="policy-section" id="s3">
+        <div class="policy-section-num">Seção 03</div>
+        <h2>Finalidade e base legal do tratamento</h2>
+        <p>
+          Tratamos seus dados pessoais com as seguintes finalidades e bases
+          legais (art. 7º da LGPD):
+        </p>
+        <ul>
+          <li>
+            <strong
+              >Responder à sua solicitação de contato ou agendamento</strong
+            >
+            — Base legal: execução de contrato ou de procedimentos preliminares
+            (art. 7º, V)
+          </li>
+          <li>
+            <strong
+              >Enviar informações sobre serviços de saúde mental quando
+              autorizado</strong
+            >
+            — Base legal: consentimento do titular (art. 7º, I)
+          </li>
+          <li>
+            <strong>Cumprimento de obrigações legais e regulatórias</strong> —
+            Base legal: cumprimento de obrigação legal (art. 7º, II)
+          </li>
+          <li>
+            <strong>Manutenção da segurança e integridade do site</strong> —
+            Base legal: legítimo interesse (art. 7º, IX)
+          </li>
+        </ul>
+        <div class="highlight-box">
+          <p>
+            Não utilizamos seus dados para fins de marketing sem consentimento
+            prévio e expresso. Você pode revogar seu consentimento a qualquer
+            momento pelo e-mail indicado na Seção 12.
+          </p>
+        </div>
+      </div>
+
+      <div class="policy-section" id="s4">
+        <div class="policy-section-num">Seção 04</div>
+        <h2>Sigilo profissional e dados clínicos</h2>
+        <p>
+          Os dados relacionados ao atendimento psicológico são protegidos pelo
+          <strong>sigilo profissional do psicólogo</strong>, conforme o Código
+          de Ética Profissional do Psicólogo (Resolução CFP nº 10/2005) e as
+          normas do Conselho Federal de Psicologia (CFP).
+        </p>
+        <p>
+          O sigilo profissional é um dever ético absoluto. As informações
+          compartilhadas no contexto clínico não serão divulgadas a terceiros,
+          salvo nas hipóteses previstas no próprio Código de Ética (risco de
+          vida ao paciente ou a terceiros, determinação judicial ou autorização
+          expressa do titular).
+        </p>
+        <p>
+          Registros e prontuários clínicos são armazenados em conformidade com
+          as normas do CFP e mantidos pelo período mínimo determinado pela
+          regulamentação vigente.
+        </p>
+      </div>
+
+      <div class="policy-section" id="s5">
+        <div class="policy-section-num">Seção 05</div>
+        <h2>Compartilhamento de dados</h2>
+        <p>
           <strong
-            >Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD)</strong
+            >Não vendemos, cedemos nem comercializamos seus dados
+            pessoais.</strong
+          >
+          O compartilhamento ocorre apenas nas seguintes situações excepcionais:
+        </p>
+        <ul>
+          <li>
+            Cumprimento de ordem judicial ou determinação de autoridade
+            competente
+          </li>
+          <li>
+            Proteção de direitos em processos judiciais, administrativos ou
+            arbitrais
+          </li>
+          <li>
+            Com seu consentimento expresso e específico para determinada
+            finalidade
+          </li>
+          <li>
+            Fornecedores de infraestrutura técnica (como hospedagem), vinculados
+            por acordos de confidencialidade
+          </li>
+        </ul>
+        <p>
+          Quando houver necessidade de envolver operadores de dados (terceiros
+          que processam dados em nosso nome), asseguraremos que eles ofereçam
+          garantias adequadas de segurança e sigilo.
+        </p>
+      </div>
+
+      <div class="policy-section" id="s6">
+        <div class="policy-section-num">Seção 06</div>
+        <h2>Cookies e tecnologias de rastreamento</h2>
+        <p>
+          Este site é uma página estática informativa e
+          <strong
+            >não utiliza cookies de rastreamento, análise comportamental ou
+            publicidade direcionada</strong
           >.
         </p>
         <p>
-          Esta Política descreve quais dados coletamos, como os utilizamos e
-          quais são seus direitos como titular.
+          Podem ser registrados logs técnicos de acesso pelo servidor de
+          hospedagem (Vercel) para fins de segurança e desempenho. Esses dados
+          são anonimizados e não permitem identificação individual.
+        </p>
+        <p>
+          Ao clicar no link "Ver no Maps" presente no site, você será
+          redirecionado ao Google Maps, que possui sua própria política de
+          privacidade e cookies independente desta.
         </p>
       </div>
 
-      <div class="divider"></div>
-
-      <div class="section">
-        <h2>1. Dados que coletamos</h2>
+      <div class="policy-section" id="s7">
+        <div class="policy-section-num">Seção 07</div>
+        <h2>Segurança e armazenamento</h2>
         <p>
-          Podemos coletar os seguintes dados pessoais quando você entra em
-          contato conosco ou utiliza nossos serviços:
+          Adotamos medidas técnicas e organizacionais adequadas para proteger
+          seus dados pessoais contra acesso não autorizado, alteração,
+          divulgação ou destruição, incluindo:
         </p>
         <ul>
-          <li>Nome completo</li>
-          <li>Número de telefone (WhatsApp ou ligação)</li>
-          <li>Endereço de entrega (para pedidos de delivery)</li>
-          <li>Endereço de e-mail (quando fornecido)</li>
-          <li>Histórico de pedidos e preferências</li>
-        </ul>
-      </div>
-
-      <div class="section">
-        <h2>2. Como usamos seus dados</h2>
-        <p>
-          Utilizamos seus dados exclusivamente para finalidades legítimas e
-          necessárias ao funcionamento do negócio:
-        </p>
-        <ul>
-          <li>Processar e entregar seus pedidos</li>
-          <li>Entrar em contato para confirmar ou informar sobre pedidos</li>
-          <li>Responder dúvidas e solicitações</li>
-          <li>Cumprir obrigações legais e fiscais</li>
+          <li>Transmissão de dados via protocolo HTTPS (criptografia TLS)</li>
+          <li>
+            Acesso restrito às informações apenas a profissionais autorizados
+          </li>
+          <li>
+            Armazenamento de dados clínicos em conformidade com as normas do CFP
+          </li>
         </ul>
         <p>
-          Seus dados não são utilizados para decisões automatizadas ou perfis de
-          consumo sem sua ciência.
+          Nenhum sistema é 100% seguro. Em caso de incidente de segurança que
+          possa afetar seus dados, comunicaremos a ocorrência à Autoridade
+          Nacional de Proteção de Dados (ANPD) e aos titulares afetados, nos
+          termos da LGPD.
         </p>
       </div>
 
-      <div class="section">
-        <h2>3. Compartilhamento de dados</h2>
-        <p>
-          Não vendemos, alugamos ou compartilhamos seus dados pessoais com
-          terceiros para fins comerciais. O compartilhamento ocorre apenas nas
-          seguintes situações:
-        </p>
+      <div class="policy-section" id="s8">
+        <div class="policy-section-num">Seção 08</div>
+        <h2>Retenção e exclusão de dados</h2>
+        <p>Mantemos seus dados pessoais pelo tempo necessário para:</p>
         <ul>
           <li>
-            Entregadores parceiros, restrito ao endereço e nome necessários para
-            a entrega
+            Prestar o serviço solicitado e manter o relacionamento contratual
           </li>
-          <li>Cumprimento de obrigação legal ou ordem judicial</li>
-          <li>Órgãos fiscais e regulatórios conforme exigido por lei</li>
+          <li>Cumprir obrigações legais e regulatórias</li>
+          <li>Exercer ou defender direitos em eventuais processos</li>
         </ul>
+        <p>
+          Dados de contato coletados pelo formulário e não convertidos em
+          atendimento formal são eliminados após <strong>90 dias</strong> de
+          inatividade, salvo se houver interesse legítimo ou consentimento para
+          manutenção.
+        </p>
+        <p>
+          Prontuários e registros clínicos são mantidos pelo período mínimo
+          exigido pelo Conselho Federal de Psicologia. Após esse prazo, os dados
+          são descartados de forma segura.
+        </p>
       </div>
 
-      <div class="section">
-        <h2>4. Armazenamento e segurança</h2>
+      <div class="policy-section" id="s9">
+        <div class="policy-section-num">Seção 09</div>
+        <h2>Seus direitos como titular (LGPD)</h2>
         <p>
-          Seus dados são mantidos em dispositivos de uso interno com acesso
-          restrito. Adotamos medidas razoáveis para proteger as informações
-          contra acesso não autorizado, perda ou destruição.
+          Nos termos dos arts. 17 a 22 da Lei nº 13.709/2018, você possui os
+          seguintes direitos em relação aos seus dados pessoais:
         </p>
-        <div class="highlight-box">
-          <p>
-            Os dados são <strong>retidos pelo tempo necessário</strong> para
-            cumprir a finalidade da coleta ou para atender obrigações legais, e
-            depois são descartados de forma segura.
-          </p>
+        <div class="rights-grid">
+          <div class="right-item">
+            <span class="right-icon">👁️</span>
+            <h4>Acesso</h4>
+            <p>Confirmar se tratamos seus dados e obter uma cópia deles</p>
+          </div>
+          <div class="right-item">
+            <span class="right-icon">✏️</span>
+            <h4>Correção</h4>
+            <p>
+              Solicitar correção de dados incompletos, inexatos ou
+              desatualizados
+            </p>
+          </div>
+          <div class="right-item">
+            <span class="right-icon">🗑️</span>
+            <h4>Eliminação</h4>
+            <p>
+              Pedir a exclusão de dados desnecessários ou tratados em
+              desconformidade
+            </p>
+          </div>
+          <div class="right-item">
+            <span class="right-icon">📦</span>
+            <h4>Portabilidade</h4>
+            <p>
+              Receber seus dados em formato estruturado e legível por máquina
+            </p>
+          </div>
+          <div class="right-item">
+            <span class="right-icon">🚫</span>
+            <h4>Oposição</h4>
+            <p>
+              Opor-se ao tratamento realizado com base em legítimo interesse
+            </p>
+          </div>
+          <div class="right-item">
+            <span class="right-icon">↩️</span>
+            <h4>Revogação</h4>
+            <p>Retirar o consentimento dado a qualquer momento, sem prejuízo</p>
+          </div>
+          <div class="right-item">
+            <span class="right-icon">ℹ️</span>
+            <h4>Informação</h4>
+            <p>Saber com quem seus dados foram compartilhados</p>
+          </div>
+          <div class="right-item">
+            <span class="right-icon">⚖️</span>
+            <h4>Revisão</h4>
+            <p>
+              Pedir revisão de decisões automatizadas que afetem seus interesses
+            </p>
+          </div>
         </div>
-      </div>
-
-      <div class="section">
-        <h2>5. Cookies e rastreamento</h2>
         <p>
-          Este site é uma página estática informativa. Não utilizamos cookies
-          próprios de rastreamento, ferramentas de análise comportamental ou
-          publicidade direcionada. Fontes externas (Google Fonts) podem carregar
-          recursos de terceiros sujeitos às suas próprias políticas.
+          Para exercer qualquer desses direitos, entre em contato pelos canais
+          indicados na
+          <a href="#s12" style="color: var(--teal-glow)">Seção 12</a>.
+          Responderemos no prazo máximo de <strong>15 dias úteis</strong>.
+        </p>
+        <p>
+          Caso você considere que seus direitos não foram atendidos
+          adequadamente, poderá apresentar reclamação à
+          <strong>Autoridade Nacional de Proteção de Dados (ANPD)</strong>.
         </p>
       </div>
 
-      <div class="section">
-        <h2>6. Seus direitos (LGPD)</h2>
-        <p>Como titular de dados, você tem direito a:</p>
-        <ul>
-          <li>Confirmar se tratamos dados seus</li>
-          <li>Acessar os dados que temos sobre você</li>
-          <li>Corrigir dados incompletos, inexatos ou desatualizados</li>
-          <li>
-            Solicitar a anonimização, bloqueio ou eliminação de dados
-            desnecessários
-          </li>
-          <li>Revogar consentimento a qualquer momento</li>
-          <li>Portabilidade dos dados a outro fornecedor</li>
-          <li>Reclamar à Autoridade Nacional de Proteção de Dados (ANPD)</li>
-        </ul>
+      <div class="policy-section" id="s10">
+        <div class="policy-section-num">Seção 10</div>
+        <h2>Encarregado de proteção de dados (DPO)</h2>
+        <p>
+          Dado o porte da organização e o volume de dados tratados, as funções
+          de encarregado de dados são exercidas internamente pela responsável
+          técnica da empresa, que pode ser contatada pelo e-mail
+          <strong>ELAINERIBEIRO.MKT@GMAIL.COM</strong>.
+        </p>
+        <p>
+          Nos termos do art. 41 da LGPD, o encarregado é o canal de comunicação
+          entre a empresa, os titulares de dados e a ANPD.
+        </p>
       </div>
 
-      <div class="section">
-        <h2>7. Base legal para o tratamento</h2>
+      <div class="policy-section" id="s11">
+        <div class="policy-section-num">Seção 11</div>
+        <h2>Alterações desta política</h2>
         <p>
-          O tratamento dos seus dados ocorre com fundamento nas seguintes bases
-          legais previstas na LGPD (art. 7º):
+          Esta Política de Privacidade pode ser atualizada periodicamente para
+          refletir mudanças legais, regulatórias ou em nossas práticas de
+          tratamento de dados.
         </p>
-        <ul>
-          <li>
-            <strong>Execução de contrato</strong> — para processar e entregar
-            seus pedidos
-          </li>
-          <li>
-            <strong>Legítimo interesse</strong> — para comunicação relacionada
-            ao pedido
-          </li>
-          <li>
-            <strong>Cumprimento de obrigação legal</strong> — para fins fiscais
-            e regulatórios
-          </li>
-          <li>
-            <strong>Consentimento</strong> — quando você nos fornece dados
-            voluntariamente
-          </li>
-        </ul>
+        <p>
+          Alterações relevantes serão comunicadas por meio de aviso em destaque
+          nesta página, com atualização da data no topo do documento.
+          Recomendamos que você revise esta página periodicamente.
+        </p>
+        <p>
+          O uso continuado do site após a publicação de alterações implica
+          concordância com a versão atualizada desta política.
+        </p>
       </div>
 
-      <div class="section">
-        <h2>8. Contato e exercício de direitos</h2>
+      <div class="policy-section" id="s12">
+        <div class="policy-section-num">Seção 12</div>
+        <h2>Contato</h2>
         <p>
-          Para exercer seus direitos, tirar dúvidas ou solicitar a exclusão dos
-          seus dados, entre em contato conosco:
+          Para exercer seus direitos, tirar dúvidas sobre esta política ou
+          reportar qualquer preocupação relacionada ao tratamento de seus dados
+          pessoais, entre em contato:
         </p>
-        <div class="contact-block">
-          <p><strong>Empresa:</strong> Nobre Salgados e Lachonetes Ltda</p>
-          <p><strong>CNPJ:</strong> 56.339.628/0001-70</p>
-          <p><strong>Telefone / WhatsApp:</strong> (81) 9788-2780</p>
-          <p><strong>E-mail:</strong> compromissocontabil@hotmail.com</p>
-          <p>
-            <strong>Endereço:</strong> R 18 VI Nova 300, Nuc.7 — Zona Rural,
-            Petrolina/PE · CEP 56.300-992
-          </p>
+        <div class="contact-policy-box">
+          <div class="contact-policy-item">
+            <div class="contact-policy-icon">✉️</div>
+            <div>
+              <h4>E-mail</h4>
+              <a href="mailto:elaineribeiro.mkt@gmail.com"
+                >elaineribeiro.mkt@gmail.com</a
+              >
+            </div>
+          </div>
+          <div class="contact-policy-item">
+            <div class="contact-policy-icon">📞</div>
+            <div>
+              <h4>Telefone</h4>
+              <a href="tel:+551281763342">(12) 8176-3342</a>
+            </div>
+          </div>
+          <div class="contact-policy-item">
+            <div class="contact-policy-icon">📍</div>
+            <div>
+              <h4>Endereço</h4>
+              <p>
+                R Antonio Afonso, 205, Sala 35 Andar 3<br />Centro – Jacareí –
+                SP – CEP 12.327-270
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="section">
-        <h2>9. Alterações nesta política</h2>
         <p>
-          Esta Política pode ser atualizada periodicamente. Alterações
-          relevantes serão comunicadas por nossos canais de atendimento.
-          Recomendamos consultar esta página regularmente.
+          Atendemos solicitações relacionadas à privacidade de dados no horário
+          comercial:
+          <strong>Segunda a Sexta, das 08h às 19h</strong>.
         </p>
       </div>
     </main>
 
     <footer>
-      <span>CNPJ: 56.339.628/0001-70 · Nobre Salgados e Lachonetes Ltda</span>
-      <a href="index.html">← Voltar ao site</a>
+      <div class="footer-inner">
+        <div class="footer-bottom">
+          <div class="footer-legal">
+            <p>
+              © 2026 <strong>RIBEIRO SERVICOS EM SAUDE MENTAL LTDA</strong> –
+              Todos os direitos reservados.
+            </p>
+            <p>
+              CNPJ: <strong>48.315.671/0001-78</strong> · R Antonio Afonso, 205,
+              Centro, JACAREÍ – SP, CEP: 12.327-270
+            </p>
+          </div>
+          <div class="footer-policy-links">
+            <a href="../index.html">← Voltar ao site</a>
+            <a
+              href="../index.html#modal-terms"
+              onclick="sessionStorage.setItem('openModal', 'terms')"
+              >Termos de Uso</a
+            >
+          </div>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
